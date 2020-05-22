@@ -20,6 +20,8 @@
 2. Update the following ports:
     * `8888:80` -> `80:80`
     * `8443:443` -> `443:443`
+3. **Run FileMaker Server**: `docker-compose up -d`
+4. **Stop FileMaker Server**: `docker-compose down`
 
 ## Running without using docker-compose ##
 1. Build image: `docker build -t intergrated/filemaker .`
