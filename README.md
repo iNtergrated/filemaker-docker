@@ -23,6 +23,22 @@
 3. **Run FileMaker Server**: `docker-compose up -d`
 4. **Stop FileMaker Server**: `docker-compose down`
 
+
+## On Digital Ocean ##
+1. Create a new Droplet e.g. Ubuntu 20.04 (LTS), Standard, $10/month
+2. SSH into the droplet
+3. Run `apt update && apt upgrade -y`
+4. Run `apt install -y docker.io docker-compose`
+5. Clone this repo `git clone https://github.com/iNtergrated/filemaker-docker.git`
+6. Go to the repo folder `cd filemaker-docker`
+7. Edit the following ports:
+    * `8888:80` -> `80:80`
+    * `8443:443` -> `443:443`
+8. Run `docker-compose up -d`
+9. Wait for the bild to finish (it could take a few minutes)
+10. Login to the FileMaker admin console `https://<droplet ip>:16000`
+
+
 ## Running without using docker-compose ##
 1. Build image: `docker build -t intergrated/filemaker .`
 2. Start the docker container:
