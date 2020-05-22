@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  filemaker_server:
+    build:
+      context: ./
+      labels: 
+        com.filemaker.server: "FileMaker Server 19"
+      network: host
+    ports:
+      - "8880:80"
+      - "8443:443"
+      - "1895:1895"
+      - "2399:2399"
+      - "5003:5003"
+      - "5013:5013"
+      - "5015:5015"
+      - "8998:8998"
+      - "9889:9889"
+      - "9898:9898"
+      - "16000:16000"
+      - "16001:16001"
+      - "50003:50003"
+      - "50004:50004"
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+      - type: volume
+        source: filemaker_server_data
+        target: "/opt/FileMaker/FileMaker Server"
+    tmpfs:
+      - /run
+      - /tmp
+    stop_grace_period: 5m
+    stop_signal: SIGRTMIN+3
+volumes:
+  filemaker_server_data:
+    name: "filemaker-server-data"
+    labels: 
+      com.filemaker.server.volume.description: "FileMaker Server Volume"
