@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   filemaker_server:
+    restart: "unless-stopped"
     build:
       context: ./
       labels: 
