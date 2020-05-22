@@ -11,9 +11,9 @@
 ## What Works ##
 | Status | Service | Notes |
 | :----: | ------- | ----- |
-| :check: | Admin Console | |
-| :check: | FileMaker Client Access | |
-| :check: | Web Direct | |
+| :white_check_mark: | Admin Console | |
+| :white_check_mark: | FileMaker Client Access | |
+| :white_check_mark: | Web Direct | |
 | :question: | Data API | *untested* |
 | :question: | Admin API | *untested* |
 | :question: | ODBC | *untested* |
