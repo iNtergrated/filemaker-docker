@@ -27,9 +27,12 @@ services:
       - type: volume
         source: filemaker_server_data
         target: "/opt/FileMaker/FileMaker Server"
-    tmpfs:
-      - /run
-      - /tmp
+      - type: volume
+        source: filemaker_server_run
+        target: "/run"
+      - type: volume
+        source: filemaker_server_tmp
+        target: "/tmp"
     stop_grace_period: 5m
     stop_signal: SIGRTMIN+3
 volumes:
@@ -37,3 +40,11 @@ volumes:
     name: "filemaker-server-data"
     labels: 
       com.filemaker.server.volume.description: "FileMaker Server Volume"
+  filemaker_server_run:
+    name: "filemaker-server-run"
+    labels: 
+      com.filemaker.server.volume.description: "FileMaker Server run"
+  filemaker_server_tmp:
+    name: "filemaker-server-tmp"
+    labels: 
+      com.filemaker.server.volume.description: "FileMaker Server tmp"
