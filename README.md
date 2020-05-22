@@ -4,12 +4,22 @@
 ## Tested on ##
 
 * macOS
+    * 10.14.6
+* Ubuntu 
+    * 20.04 (LTS)
 
-## Setup ##
+## Setup - Local ##
 
 > Make sure FileMaker is not running on the host system. If FileMaker is running you could get a port 5003 conflict.
+
 1. **Run FileMaker Server**: `docker-compose up -d`
 2. **Stop FileMaker Server**: `docker-compose down`
+
+## Setup - Hosted ##
+1. Open `docker-compose.yml'
+2. Update the following ports:
+    * `8888:80` -> `80:80`
+    * `8443:443` -> `443:443`
 
 ## Running without using docker-compose ##
 1. Build image: `docker build -t intergrated/filemaker .`
