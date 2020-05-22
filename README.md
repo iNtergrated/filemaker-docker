@@ -8,6 +8,17 @@
 * Ubuntu 
     * 20.04 (LTS)
 
+## What Works ##
+| Status | Service | Notes |
+| :----: | ------- | ----- |
+| :check: | Admin Console | |
+| :check: | FileMaker Client Access | |
+| :check: | Web Direct | |
+| :question: | Data API | *untested* |
+| :question: | Admin API | *untested* |
+| :question: | ODBC | *untested* |
+| :question: | Plugins | *untested* |
+
 ## Setup - Local ##
 
 > Make sure FileMaker is not running on the host system. If FileMaker is running you could get a port 5003 conflict.
